@@ -52,10 +52,10 @@ public class AmazonSearchPage {
 
         String tempattr;
         for(WebElement element:productResultsList) {
-            if(element.getAttribute("data-asin") != null && !element.getAttribute("data-asin").isEmpty()) {
+            if(element.getAttribute("data") != null && !element.getAttribute("data").isEmpty()) {
                 temp = "";
-                temp = element.getAttribute("data-asin");
-                WebElement productDescription = _driver.findElement(By.xpath("//*[@id=\"search\"]//span[@data-component-type='s-search-results']/div[2]/div[@data-asin='"+temp+"']//h2/a/span"));
+                temp = element.getAttribute("data");
+                WebElement productDescription = _driver.findElement(By.xpath("//*[@id=\"search\"]//span[@data-component-type='s-search-results']/div[2]/div[@data='"+temp+"']//h2/a/span"));
                 searchResults.add(productDescription.getText());
                 //System.out.println(productDescription.getText());
             }
